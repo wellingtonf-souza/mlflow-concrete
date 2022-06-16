@@ -45,7 +45,8 @@ def train(algorithm: str, grid_search: str)->None:
     y_pred = model.predict(x_test)
 
     evs, mae = get_metrics(y_test, y_pred)
-        
+    
+    logger.info("iniciando o salvamento de parametros, metricas e modelo com o mlflow")    
     mlflow.start_run()
     mlflow.log_params(model.get_params())
     mlflow.log_metrics({"evs": evs, "mae": mae})

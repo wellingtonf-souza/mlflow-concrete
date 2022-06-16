@@ -15,7 +15,7 @@ class AdaBoostRegressor(Model):
         if grid_search:
             logger.info("iniciando o fit do AdaBoostRegressor com GridSearchCV")
             parameters = { 
-                'n_estimators': [25, 50, 100],
+                'n_estimators': [25, 50, 75],
                 'base_estimator__min_samples_leaf': [1, 2, 4, 6],
                 'base_estimator__max_depth': [3, 5, 7]
              }
