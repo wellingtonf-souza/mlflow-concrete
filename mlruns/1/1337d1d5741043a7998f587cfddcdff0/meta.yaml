@@ -1,0 +1,15 @@
+artifact_uri: file:///home/wellington/Desktop/mlp/conteudo/MLOps/eml3-at2-ferreira/mlruns/1/1337d1d5741043a7998f587cfddcdff0/artifacts
+end_time: 1655400286960
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: deleted
+name: ''
+run_id: 1337d1d5741043a7998f587cfddcdff0
+run_uuid: 1337d1d5741043a7998f587cfddcdff0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1655400284765
+status: 4
+tags: []
+user_id: wellington

@@ -11,6 +11,7 @@ from src.logs import logger
 from src.helpers import get_data
 from typing import Tuple
 from src.regressor import Regressor
+import uuid
 
 def get_metrics(y_true: np.array, y_pred: np.array)->Tuple[float,float]:
     logger.info("iniciando a avaliacao de metricas do modelo")
@@ -47,10 +48,10 @@ def train(algorithm: str, grid_search: str)->None:
     evs, mae = get_metrics(y_test, y_pred)
     
     logger.info("iniciando o salvamento de parametros, metricas e modelo com o mlflow")    
-    mlflow.start_run()
-    mlflow.log_params(model.get_params())
-    mlflow.log_metrics({"evs": evs, "mae": mae})
-    mlflow.sklearn.log_model(model, "model")
+    with mlflow.start_run(experiment_id = str(uuid.uuid4())):
+        mlflow.log_params(model.get_params())
+        mlflow.log_metrics({"evs": evs, "mae": mae})
+        mlflow.sklearn.log_model(model, "model")
     mlflow.end_run()
 
 if __name__ == "__main__":
