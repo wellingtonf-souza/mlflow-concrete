@@ -64,7 +64,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         '--grid_search',
-        help="Especifica se irá realizar a busca pelos melhores parâmetros ou utilizar os valores default de cada algoritmo", 
+        help="Especifica se irá realizar a busca pelos melhores parâmetros ou utilizar os valores default de cada algoritmo: y ou n", 
         type= str, 
         default= 'n'
     )
