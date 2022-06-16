@@ -1,4 +1,4 @@
-name: Hello MLflow
+name: Concrete MLflow
 
 conda_env: src/config/conda_env.yaml
 
@@ -6,5 +6,5 @@ entry_points:
   main:
     parameters:
       algorithm: {type: str, default: 'RandomForestRegressor'}
-      grid_search: {type: bool, default: False}
-    command: "python trainer.py {algorithm} {grid_search}"
+      grid_search: {type: str, default: 'n'}
+    command: "python trainer.py --algorithm={algorithm} --grid_search={grid_search}"
